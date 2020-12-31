@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BOT</title>
+  </head>
+  <body>
+    <input
+      type="search"
+      id="name-input"
+      oninput="nameVal()"
+      placeholder="What's Your Name?"
+      autocomplete="off"
+    />
+    <input
+      type="number"
+      id="age-input"
+      oninput="ageVal()"
+      placeholder="How old are You?"
+      autocomplete="off"
+    />
+    <input
+      type="text"
+      id="yes-input"
+      oninput="yesVal()"
+      placeholder="Correct?"
+      autocomplete="off"
+    />
+    <div class="person-data">
+      <h1 class="start">Start Typing...</h1>
+      <h1 id="name"></h1>
+    </div>
+    <button class="cta">Next</button>
+    <button class="cta2">Next</button>
+
+    <script src="app.js" defer></script>
+  </body>
+</html>
