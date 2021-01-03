@@ -15,8 +15,10 @@ window.addEventListener("load", () => {
     divOne.style.display = "none";
     divTwo.style.display = "none";
     ageInputField.style.display = "none";
-    yesInput.style.display = "none";
+    yesInput.style.display = "none";  
 })
+
+
 
 function divCreate() {
     divThree = document.createElement("button");
@@ -40,9 +42,18 @@ function ctaAction () {
 }
 
 // declaring variables
+
 let inputField = document.querySelector("#name-input");
 let btnCta = document.querySelector(".cta");
 let btnCta2 = document.querySelector(".cta2");
+
+inputField.addEventListener('click', () => {
+    if (inputField.focus == true) {
+        console.log(`Active`);
+    } else {
+        console.log(`Unactive`);
+    }
+})
 
 function yesVal() {
     
@@ -74,7 +85,24 @@ function yesVal() {
 
 function nameVal() {
 
+
 let inputVal = document.querySelector("#name-input").value;
+// declare list of names
+const names = (`https://raw.githubusercontent.com/dominictarr/random-name/master/first-names.json`);
+// fetch list of names
+fetch(names) 
+    .then(response => {
+        return response.json()
+    }) // check if user input matches list of names
+    .then(data => {
+       if  (data.indexOf(inputVal) !== -1 && inputVal.length > 0)  {
+        document.querySelector("#name-input").style.borderBottom = "3px solid green";
+       } else if (inputVal === "") {
+        document.querySelector("#name-input").style.borderBottom = "1px solid black";
+       } else {
+        document.querySelector("#name-input").style.borderBottom = "3px solid red";
+       }
+    })
     
 document.querySelector("#name").innerHTML = `My name is ${inputVal}.`;
 
