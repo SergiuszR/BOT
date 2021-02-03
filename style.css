@@ -15,21 +15,33 @@ body {
   flex-flow: column nowrap;
 }
 
+#name {
+  text-align: center;
+}
+
+.person-data {
+  display: flex;
+}
+
 input {
   position: absolute;
   top: 10%;
   left: 50%;
   transform: translate(-50%);
-  border: none;
+  border-top: none;
+  border-left: none;
+  border-right: none;
   border-bottom: 1px solid black;
   height: 100px;
-  width: 400px;
+  max-width: 350px;
   outline: none;
   font-size: 30px;
+  -webkit-appearance: none; /* Remove default appearance styling for Webkit */
+  -moz-appearance: none; /* Remove default appearance styling for Firefox */
 }
 
 input::placeholder {
-  font-size: 30px;
+  font-size: clamp(1rem, 2vw, 2rem);
 }
 
 button {
@@ -48,5 +60,5 @@ button {
 }
 
 h1 {
-  font-size: 3rem;
+  font-size: clamp(3rem, 2vw, 4rem);
 }

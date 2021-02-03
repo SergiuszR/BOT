@@ -50,7 +50,7 @@ let btnCta2 = document.querySelector(".cta2");
 
 function yesVal() {
     
-     if (yesInput.value === "yes" ) {
+     if (yesInput.value === "yes" || yesInput.value === "Yes" ) {
         divCreate();
         btnCta3.innerHTML = "Great!";
         btnCta2.style.display = "none";
@@ -58,7 +58,7 @@ function yesVal() {
         ctaAction();
         
 
-    } else if (yesInput.value === "no") {
+    } else if (yesInput.value === "no" || yesInput.value === "No") {
         divCreate();
         btnCta3.innerHTML = "Oops...";
         btnCta2.style.display = "none";
